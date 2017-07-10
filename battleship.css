@@ -6,7 +6,7 @@ div#board {
 	width: 1024px;
 	height: 863px;
 	margin: auto;
-	background: url("board.jpg") no-repeat;
+	background: url("https://pp.userapi.com/c836228/v836228742/4e2fc/U4N0HV6Cnw0.jpg") no-repeat;
 }
 
 div#messageArea {
@@ -16,10 +16,10 @@ div#messageArea {
 	color: rgb(83, 175, 19);
 }
 .hit {
-	background: url("ship.png") no-repeat center center;
+	background: url("https://pp.userapi.com/c836228/v836228742/4e30a/VouFGYPZcoQ.jpg") no-repeat center center;
 }
 .miss {
-	background: url("miss.png") no-repeat center center;
+	background: url("https://pp.userapi.com/c836228/v836228742/4e303/epu8eQreW8o.jpg") no-repeat center center;
 }
 
 table {
