@@ -1,8 +1,10 @@
 var cell = document.getElementsByClassName("game-item"),
   reset = document.getElementById("reset-game"),
   message = document.getElementById("message"),
-  player = "X",
-  stepCount = 0,
+  player = "X", // первый ход игрока
+  stepCount = 0, // счетчик ходов
+  
+  // выигрышные комбинации
   winCombinations = [
     [1, 2, 3],
     [1, 4, 7],
@@ -13,13 +15,16 @@ var cell = document.getElementsByClassName("game-item"),
     [4, 5, 6],
     [7, 8, 9]
   ],
-  dataX = [],
+
+  // массивы для записи ходов игрока
+  dataX = [], 
   dataO = [];
 
+// цикл для событий по клику с вызовом функции текущего хода
 for (var i = 0; i < cell.length; i++) {
   cell[i].addEventListener("click", currentStep);
 }
-
+// функция текузего хода
 function currentStep() {
   var num = +this.getAttribute("data-cell");
   if (!this.textContent) {
@@ -45,7 +50,7 @@ function currentStep() {
     if (stepCount === 9) {
       (message.innerText = "Ничья")
     }
-      else{
+    else{
         (message.innerText = "Ходит игрок " + player);
       } 
   }
@@ -55,6 +60,7 @@ function changePlayer() {
   player === "X" ? (player = "O") : (player = "X");
 }
 
+// кнопка Очистить. Обнуляются все данные.
 reset.addEventListener("click", function() {
   for (var i = 0; i < cell.length; i++) {
     cell[i].innerText = "";
@@ -70,6 +76,7 @@ reset.addEventListener("click", function() {
   }
 });
 
+// Проверка победы
 function checkWin(arr, number) {
   for (var w = 0, wLen = winCombinations.length; w < wLen; w++) {
     var someWinArr = winCombinations[w],
